@@ -8,15 +8,22 @@
 Hello, AutoMarket Blyat!!!
 </h1><hr>
 <h4>Cars from all the world</h4>
-<b>Название : </b>${product.title}<br>
-<b>описание : </b>${product.title}<br>
-<b>цена : </b>${product.title}<br>
-<b>автор : </b>${product.title}<br>
-<b>город : </b>${product.city}<br>
+<#list products as product>
+    <div>
+        <p><b>${product.title}</b> ${product.price} руб. | <a href="/product/${product.id}">Подробнее...</a> <br></p>
+    </div>
+</#list>
 <hr>
-<form action="/product/delete/${product.id}" method="post"
-<h3>Создать новый товар</h3>
+<h3>Создать новый товар </h3>
 <form action="/product/create" method="post">
-    <input type="submit" value="удалить товар"/>
+    название Обьявления: <input type="text", name="title"/><br><br>
+    Описание: <input type="text", name="description"/><br><br>
+    Цена: <input type="number", name="price"/><br><br>
+    Город: <input type="text", name="city"/><br><br>
+    Автор: <input type="text", name="author"/><br><br>
+
+
+    <input type="submit" value="Добавить товар"/>
+
 </body>
 </html>
